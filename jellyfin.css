@@ -3557,10 +3557,6 @@ body.libraryDocument.withSectionTabs .backdropImage {
     display: none;
 }
 
-form.trackSelections {
-    overflow: hidden;
-}
-
 .emby-button.show-focus:focus {
     background: transparent!important;
     transform: none!important;
@@ -3585,15 +3581,12 @@ form.trackSelections {
     padding-left: 0;
 }
 
-.itemDetailsGroup {
-    display: none;
-}
-
 form.trackSelections.focuscontainer-x {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+    overflow: hidden;
 }
 
 .detailSectionContent {
