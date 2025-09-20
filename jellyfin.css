@@ -3633,3 +3633,27 @@ button.listItem.listItem-button.actionSheetMenuItem:focus, button.listItem.listI
 .videoOsdBottom.videoOsdBottom-maincontrols .btnPause {
     font-size: inherit!important;
 }
+
+button.editorsChoiceItemButton.raised.button-submit.block.emby-button, .editorsChoiceScrollButtonsContainer, .editorsChoicePlayPauseContainer {
+    display: none!important;
+}
+
+.editorsChoiceItemBanner {
+    position: relative;
+    left: -21px;
+}
+
+.editorsChoiceAdded {
+    display: flex;
+    flex-direction: column;
+}
+
+.editorsChoiceAdded .editorsChoiceContainer {
+    order: 0;
+    margin-top: 1.8em;
+    margin-bottom: 0!important;
+}
+
+.editorsChoiceAdded .section0 {
+    order: -1;
+}
