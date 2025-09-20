@@ -3553,8 +3553,17 @@ body.libraryDocument.withSectionTabs .backdropImage {
     animation: none!important;
 }
 
-.layout-tv .detailPageWrapperContainer .card {
-    display: none!important;
+.layout-tv .detailImageContainer {
+    display: none;
+}
+
+form.trackSelections {
+    overflow: hidden;
+}
+
+.emby-button.show-focus:focus {
+    background: transparent!important;
+    transform: none!important;
 }
 
 /* 
