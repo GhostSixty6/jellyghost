@@ -3542,7 +3542,6 @@ button.headerSyncButton.syncButton.headerButton.headerButtonRight.paper-icon-but
 
 .cardScalable {
     border-radius: .375em!important;
-    border: none!important;
 }
 
 body.libraryDocument.withSectionTabs .backdropImage {
@@ -3555,6 +3554,11 @@ body.libraryDocument.withSectionTabs .backdropImage {
 }
 
 .layout-tv .detailPageWrapperContainer .card {
+    display: none!important;
+}
+
+/* 
+.layout-tv .detailPageWrapperContainer .card {
     width: 100vw!important;
     position: fixed!important;
     top: -25vw!important;
@@ -3566,6 +3570,7 @@ body.libraryDocument.withSectionTabs .backdropImage {
     pointer-events: none;
     z-index: -1!important;
 }
+*/
 
 .layout-tv .detailPageWrapperContainer {
     padding-left: 0;
