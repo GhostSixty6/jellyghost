@@ -1,8 +1,5 @@
-/* ElegantFin Theme v25.08.08 for Jellyfin by lscambo13 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+/* ElegantFin */
 :root {
-    --elegantFinFooterText: "ElegantFin v25.08.08";
     color-scheme: dark;
     --darkerGradientPoint: #111827;
     --darkerGradientPointAlpha: rgba(17, 24, 39, .85);
@@ -65,14 +62,14 @@
     --loginPageBgUrl: url("");
     --loginPageText: "Sign in to continue";
     --overlayPlayButtonPosition: 2.8em;
-    --iconPack: 'Material Icons Round', Material Icons;
+    --iconPack: Material Icons;
     --extraCardButtonsVisibility: none;
     --libraryLabelVisibility: none;
     --cardHoverEffect: ""
 }
 
 html {
-    font-family: "Inter", serif;
+    font-family: Noto Sans,Noto Sans HK,Noto Sans JP,Noto Sans KR,Noto Sans SC,Noto Sans TC,sans-serif;
     font-optical-sizing: auto;
     font-weight: 425;
     font-style: normal;
@@ -82,14 +79,6 @@ html {
 .layout-mobile {
     --itemColumnGap: 0;
     --sidePadding: 5%
-}
-
-@font-face {
-    font-family: 'Material Icons Round';
-    font-style: normal;
-    font-weight: 100 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v267/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2) format('woff2')
 }
 
 .material-icons {
@@ -122,7 +111,7 @@ html {
 }
 
 .dashboardFooter::after {
-    content: var(--elegantFinFooterText);
+    content: "";
     font-size: .8em;
     color: #4e4e60
 }
@@ -396,7 +385,7 @@ html {
 }
 
 .cardOverlayContainer:has(.cardOverlayButton:hover) {
-    backdrop-filter: var(--blurDefault)
+    /* backdrop-filter: var(--blurDefault) */
 }
 
 .listViewUserDataButtons {
@@ -600,24 +589,24 @@ html {
 
     .portraitCard,
     .squareCard {
-        --cardCount: 9
+        --cardCount: 6
     }
 
     .overflowPortraitCard,
     .overflowSquareCard {
-        --cardCount: 8
+        --cardCount: 5
     }
 
     .squareCard:has(.cardFooter) {
-        --cardCount: 7
+        --cardCount: 5
     }
 
     .backdropCard {
-        --cardCount: 7
+        --cardCount: 3
     }
 
     .overflowBackdropCard {
-        --cardCount: 6
+        --cardCount: 3
     }
 }
 
@@ -625,24 +614,24 @@ html {
 
     .portraitCard,
     .squareCard {
-        --cardCount: 8
+        --cardCount: 5
     }
 
     .overflowPortraitCard,
     .overflowSquareCard {
-        --cardCount: 7
+        --cardCount: 5
     }
 
     .squareCard:has(.cardFooter) {
-        --cardCount: 6
+        --cardCount: 5
     }
 
     .backdropCard {
-        --cardCount: 6
+        --cardCount: 3
     }
 
     .overflowBackdropCard {
-        --cardCount: 5
+        --cardCount: 3
     }
 }
 
@@ -652,19 +641,19 @@ html {
     .squareCard,
     .overflowPortraitCard,
     .overflowSquareCard {
-        --cardCount: 7
+        --cardCount: 5
     }
 
     .squareCard:has(.cardFooter) {
-        --cardCount: 6
+        --cardCount: 5
     }
 
     .backdropCard {
-        --cardCount: 6
+        --cardCount: 3
     }
 
     .overflowBackdropCard {
-        --cardCount: 5
+        --cardCount: 3
     }
 }
 
@@ -674,16 +663,16 @@ html {
     .squareCard,
     .overflowPortraitCard,
     .overflowSquareCard {
-        --cardCount: 6
+        --cardCount: 5
     }
 
     .squareCard:has(.cardFooter) {
-        --cardCount: 5
+        --cardCount: 3
     }
 
     .overflowBackdropCard,
     .backdropCard {
-        --cardCount: 4
+        --cardCount: 3
     }
 }
 
@@ -702,7 +691,7 @@ html {
 
     .backdropCard,
     .overflowBackdropCard {
-        --cardCount: 4
+        --cardCount: 3
     }
 }
 
@@ -1038,10 +1027,20 @@ html {
     padding-left: 0
 }
 
-.layout-tv .detailImageContainer.padded-left {
-    padding-left: 0;
-    height: 0;
-    position: fixed
+.layout-tv .detailImageContainer {
+    padding-left: 0 !important;
+    height: unset !important;
+    position: relative !important;
+    padding-bottom: 2rem!important;
+}
+
+.detailImageContainer>.card {
+    position: relative!important;
+    top: 0!important;
+    transform: none!important;
+    left: 0!important;
+    height: unset!important;
+    max-height: unset!important;
 }
 
 .layout-desktop .detailImageContainer .card {
@@ -1064,10 +1063,10 @@ html {
     display: block !important
 }
 
-.layout-mobile .detailImageContainer .card {
+/*.layout-mobile .detailImageContainer .card {
     -webkit-filter: drop-shadow(0 0 .25rem rgba(0, 0, 0, .25));
     filter: drop-shadow(0 0 .25rem rgba(0, 0, 0, .25))
-}
+}*/
 
 .layout-mobile [dir=ltr] .infoWrapper,
 .layout-mobile .infoWrapper {
@@ -1248,7 +1247,7 @@ html,
 
 .backdropImage:before {
     transform: scale(1.1);
-    filter: var(--blurLargest)
+   /* filter: var(--blurLargest)*/
 }
 
 .backgroundContainer.withBackdrop {
@@ -1296,7 +1295,7 @@ html,
 
 .appfooter {
     background-color: var(--headerColor) !important;
-    backdrop-filter: var(--blurLargest) !important
+    /*backdrop-filter: var(--blurLargest) !important*/
 }
 
 .lyricPage {
@@ -1343,7 +1342,7 @@ html,
 }
 
 .itemProgressBar:not(.backgroundProgress):not(.playbackProgress):not(.transcodingProgress) {
-    backdrop-filter: var(--blurLarge);
+   /* backdrop-filter: var(--blurLarge);*/
     background-color: var(--osdSeekBarBufferedColorAlpha) !important;
     height: .35em;
     overflow: hidden;
@@ -1500,7 +1499,7 @@ progress+span {
 .drawer-open {
     background-color: var(--drawerColor);
     border-right: var(--defaultBorder);
-    backdrop-filter: var(--blurLarge)
+    /*backdrop-filter: var(--blurLarge)*/
 }
 
 .mainDrawer-scrollContainer {
@@ -1758,7 +1757,7 @@ progress+span {
 }
 
 .dialog {
-    backdrop-filter: var(--blurDefault);
+    /*backdrop-filter: var(--blurDefault);*/
     background-color: var(--drawerColor);
     min-width: 11em
 }
@@ -1810,13 +1809,13 @@ progress+span {
 
 .collapseContent {
     background-color: unset !important;
-    backdrop-filter: unset !important
+    /*backdrop-filter: unset !important*/
 }
 
 .selectionCommandsPanel {
     background: var(--lighterGradientPoint);
     border-bottom: var(--defaultBorder);
-    backdrop-filter: var(--blurLarge)
+    /*backdrop-filter: var(--blurLarge)*/
 }
 
 .selectionCommandsPanel>h1 {
@@ -2037,18 +2036,18 @@ div[data-type="PhotoAlbum"] .play_arrow:before {
 
 .fab:focus {
     background: var(--lighterGradientPoint) !important;
-    filter: brightness(1.2)
+    /*filter: brightness(1.2)*/
 }
 
 .raised:focus {
     background: inherit;
-    filter: brightness(1.2)
+    /*filter: brightness(1.2)*/
 }
 
 .raised:active,
 .fab:active,
 .emby-button:active {
-    filter: brightness(1.2) !important;
+    /*filter: brightness(1.2) !important;*/
     transform: scale(.98)
 }
 
@@ -2184,7 +2183,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 .formDialogFooter:not(.formDialogFooter-clear),
 .formDialogHeader:not(.formDialogHeader-clear) {
     background-color: var(--headerColor);
-    backdrop-filter: var(--blurDefault)
+   /* backdrop-filter: var(--blurDefault)*/
 }
 
 .paperList {
@@ -2229,13 +2228,13 @@ div[data-role=controlgroup] a.ui-btn-active {
 
 .MuiAppBar-root {
     background: var(--headerColor);
-    backdrop-filter: var(--blurDefault);
+   /* backdrop-filter: var(--blurDefault);*/
     border-bottom: var(--defaultBorder)
 }
 
 .MuiDrawer-paper {
     background: var(--drawerColor);
-    backdrop-filter: var(--blurLarge);
+   /* backdrop-filter: var(--blurLarge);*/
     border-right: var(--defaultBorder);
     padding: .25em
 }
@@ -2697,7 +2696,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 .upNextContainer {
     background: var(--headerColor) !important;
     border: var(--defaultBorder) !important;
-    backdrop-filter: var(--blurDefault)
+    /*backdrop-filter: var(--blurDefault)*/
 }
 
 .activeSession {
@@ -2745,7 +2744,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 
     .listItem:hover {
         background: rgba(255, 255, 255, .125);
-        backdrop-filter: var(--blurLargest)
+        /*backdrop-filter: var(--blurLargest)*/
     }
 
     .navMenuOption:hover {
@@ -3011,7 +3010,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 .iconOsd {
     border-radius: var(--largeRadius);
     background-color: rgba(69, 69, 69, .69);
-    backdrop-filter: var(--blurDefault)
+    /*backdrop-filter: var(--blurDefault)*/
 }
 
 .playerStats-stats {
@@ -3052,7 +3051,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     background: rgba(30, 40, 54, .7);
     padding: 2em 2em 1em 2em !important;
     border-radius: var(--largerRadius);
-    backdrop-filter: var(--blurDefault);
+    /*backdrop-filter: var(--blurDefault);*/
     box-sizing: border-box;
     transform: translateY(3em)
 }
@@ -3174,14 +3173,14 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     top: 0;
     bottom: 4.3em;
     background: var(--headerColor);
-    backdrop-filter: var(--blurLargest);
+    /*backdrop-filter: var(--blurLargest);*/
     z-index: 0
 }
 
 .layout-mobile .playlistSectionButton {
     background: var(--drawerColor);
     border-top: var(--defaultBorder);
-    backdrop-filter: var(--blurSmallest);
+   /* backdrop-filter: var(--blurSmallest);*/
     z-index: 1
 }
 
@@ -3197,7 +3196,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     top: 5em;
     padding: 1em;
     margin-bottom: 2em;
-    backdrop-filter: var(--blurLargest);
+    /*backdrop-filter: var(--blurLargest);*/
     border: var(--defaultLighterBorder);
     z-index: 2;
     background-color: var(--headerColor);
@@ -3345,7 +3344,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     bottom: 0;
     left: 0;
     right: 0;
-    backdrop-filter: var(--blurLargest);
+    /*backdrop-filter: var(--blurLargest);*/
     -webkit-mask: var(--headerBlurMask);
     mask: var(--headerBlurMask);
     z-index: -1
@@ -3396,7 +3395,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 }
 
 .noHomeButtonHeader .emby-tab-button:before {
-    font-family: 'Material Icons Round';
+    font-family: Material Icons;
     padding-inline-end: .5ch;
     font-size: 1.2em;
     font-variation-settings: 'FILL' 0
@@ -3476,35 +3475,16 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 /* Custom CSS */
 
-.mainDrawer.hide.transition.touch-menu-la {
-    display: none!important;
-    width: 80px!important;
-}
-
-span.navMenuOptionText {
-    display: none;
-}
-
-.mainDrawer-scrollContainer.scrollContainer.focuscontainer-y.scrollY {
-    overflow: hidden!important;
-}
-
-a.navMenuOption.lnkMediaFolder.emby-button.show-focus {
-    padding: .75em 0em!important;
-    justify-content: center;
-}
-
-span.material-icons.navMenuOptionIcon {
-    margin: 0!important;
-}
-
-h3.sidebarHeader {
-    opacity: 0;
-    font-size: 12px;
-    pointer-events: none;
-}
-
-button.headerSyncButton.syncButton.headerButton.headerButtonRight.paper-icon-button-light.show-focus {
+button.headerSyncButton.syncButton.headerButton.headerButtonRight.paper-icon-button-light.show-focus,
+span.navMenuOptionText,
+.itemDetailsGroup,
+.sections.homeSectionsContainer .section0 h2,
+.noHomeButtonHeader .headerTabs.sectionTabs,
+body.libraryDocument.withSectionTabs .backdropImage,
+button.btnSelectView, button.btnUserRating.detailButton,
+.emby-tabs-slider button.emby-tab-button:nth-child(4),
+.docspinner.mdl-spinner.mdlSpinnerActive,
+button.btnUserRating {
     display: none;
 }
 
@@ -3512,21 +3492,11 @@ button.headerSyncButton.syncButton.headerButton.headerButtonRight.paper-icon-but
     padding-top: 7em !important;
 }
 
-.libraryPage:not(.noSecondaryNavPage) {
-    /* padding-top: 5em !important; */
-}
-
-.sections.homeSectionsContainer .section0 h2 {
-    display: none;
-}
-
 .itemsContainer.padded-left.padded-right.vertical-wrap.focuscontainer-x.itemsContainer-tv {
     justify-content: center!important;
 }
 
 .homeLibraryButton {
-    /* border: none!important; */
-    /* background: rgba(29,38,53,0); */
     justify-content: center;
 }
 
@@ -3541,39 +3511,17 @@ button.headerSyncButton.syncButton.headerButton.headerButtonRight.paper-icon-but
     border-radius: .375em!important;
 }
 
-body.libraryDocument.withSectionTabs .backdropImage {
-    display:none;
-    background-image: unset!important;
+.personCard .cardScalable {
+    border-radius: 100%!important;
 }
 
 .backdropImage {
     animation: none!important;
 }
 
-.layout-tv .detailImageContainer,
-.noHomeButtonHeader .headerTabs.sectionTabs {
-    display: none;
-}
-
 .emby-button.show-focus:focus {
-    background: transparent!important;
     transform: none!important;
 }
-
-/* 
-.layout-tv .detailPageWrapperContainer .card {
-    width: 100vw!important;
-    position: fixed!important;
-    top: -25vw!important;
-    left: 25vw!important;
-    transform: none!important;
-    max-width: none!important;
-    filter: blur(9rem);
-    opacity: .5;
-    pointer-events: none;
-    z-index: -1!important;
-}
-*/
 
 .layout-tv .detailPageWrapperContainer {
     padding-left: 0;
@@ -3604,4 +3552,84 @@ form.trackSelections.focuscontainer-x {
 
 .layout-tv .detailVerticalSection {
     margin-bottom: 0!important;
+}
+
+.card.show-animation:focus>.cardBox {
+    transform: none!important;
+}
+
+.emby-tabs-slider {
+    max-width: 50vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.emby-tabs-slider button.emby-tab-button::before {
+    content: "\e02c";
+    font-family: var(--iconPack) !important;
+    font-size: 1.25em;
+    margin-right: .3rem;
+}
+
+.emby-tabs-slider button.emby-tab-button:nth-child(2)::before {
+    content: "\e0f0";
+}
+
+.emby-tabs-slider button.emby-tab-button:nth-child(3)::before {
+    content: "\e8f4";
+}
+
+.emby-tabs-slider button.emby-tab-button:nth-child(5)::before {
+    content: "\e431";
+}
+
+.emby-tabs-slider button.emby-tab-button:nth-child(6)::before {
+    content: "\e1a0";
+}
+
+.infoWrapper h1.itemName, .infoWrapper h1.parentName {
+    font-size: 3em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button.button-flat.detailButton.emby-button:focus {
+    background: #fff!important;
+}
+
+button.button-flat.detailButton.emby-button:focus .detailButton-icon,
+.btnPlay:focus>.detailButton-content::after {
+    color: #000!important;
+}
+
+.btnPlay.detailButton {
+    background: transparent;
+    color: var(--textColor);
+}
+
+.videoPlayerContainer.videoPlayerContainer-onTop::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--backgroundGradient);
+}
+
+.videoPlayerContainer.videoPlayerContainer-onTop video {
+    z-index: 2;
+    opacity: 20%;
+    height: 100vh!important; 
+    width: 150vw!important;
+}
+
+button.listItem.listItem-button.actionSheetMenuItem:focus, button.listItem.listItem-button.actionSheetMenuItem:focus * {
+    font-weight: bold!important;
+}
+
+.videoOsdBottom.videoOsdBottom-maincontrols .btnPause {
+    font-size: inherit!important;
 }
