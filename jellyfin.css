@@ -3559,7 +3559,6 @@ form.trackSelections.focuscontainer-x {
 }
 
 .emby-tabs-slider {
-    max-width: 50vw;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -3594,18 +3593,18 @@ form.trackSelections.focuscontainer-x {
     text-overflow: ellipsis;
 }
 
-button.button-flat.detailButton.emby-button:focus {
-    background: #fff!important;
-}
-
-button.button-flat.detailButton.emby-button:focus .detailButton-icon,
-.btnPlay:focus>.detailButton-content::after {
-    color: #000!important;
-}
-
 .btnPlay.detailButton {
     background: transparent;
     color: var(--textColor);
+}
+
+.btnPlay:focus {
+    background: #fff!important;
+}
+
+.btnPlay:focus .detailButton-icon,
+.btnPlay:focus>.detailButton-content::after {
+    color: #000!important;
 }
 
 .videoPlayerContainer.videoPlayerContainer-onTop::before {
@@ -3656,4 +3655,32 @@ button.editorsChoiceItemButton.raised.button-submit.block.emby-button, .editorsC
 
 .editorsChoiceAdded .section0 {
     order: -1;
+}
+
+.headerLeft .paper-icon-button-light.show-focus:focus {
+    transform: unset;
+}
+
+.skinHeader-blurred:not(.osdHeader) {
+    min-height: 70px;
+}
+
+.headerTop {
+    align-items: flex-start;
+}
+
+div#itemBackdrop, .detailLogo, form.trackSelections.focuscontainer-x {
+    display: none!important;
+}
+
+.layout-tv .detailImageContainer .card {
+    display: none!important;
+}
+
+.detailLogo:not(.hide)~.detailPageWrapperContainer .nameContainer h1 {
+    display: block!important;
+}
+
+.personCard .cardScalable {
+    max-height: 320px;
 }
